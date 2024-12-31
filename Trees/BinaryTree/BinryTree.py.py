@@ -44,7 +44,13 @@ class BinarySearchTree:
             self._inorder(node.left)
             print(node.val, end=" ")
             self._inorder(node.right)
-    
+            
+    def _min_value_node(self, node):
+      current = node
+      while current.left is not None:
+        current = current.left
+      return current 
+     
     def delete(self, key):
         self.root = self._delete(self.root, key)
     
@@ -68,11 +74,6 @@ class BinarySearchTree:
         
         return node
     
-    def _min_value_node(self, node):
-        current = node
-        while current.left is not None:
-            current = current.left
-        return current
 
 # Example usage:
 bst = BinarySearchTree()
@@ -101,3 +102,21 @@ print("\n\nDelete 50")
 bst.delete(50)
 print("Inorder traversal of the modified tree")
 bst.inorder()
+'''
+Output:
+
+Inorder traversal of the given tree
+20 30 40 50 60 70 80 
+
+Delete 20
+Inorder traversal of the modified tree
+30 40 50 60 70 80 
+
+Delete 30
+Inorder traversal of the modified tree
+40 50 60 70 80 
+
+Delete 50
+Inorder traversal of the modified tree
+40 60 70 80 
+'''

@@ -82,3 +82,15 @@ bst.preorder()
 print("\n\nPost-order traversal of the given tree")
 bst.postorder()
 
+''''
+ Output:
+
+In-order traversal of the given tree
+3 5 9 10 11 15 20 
+
+Pre-order traversal of the given tree
+10 3 9 5 11 15 20 
+
+Post-order traversal of the given tree
+5 9 3 20 15 11 10 
+'''
